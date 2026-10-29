@@ -213,7 +213,7 @@ export default function Home() {
     ]);
   }
 
-  const PageHead=({title,sub,button}:{title:string;sub:string;button?:React.ReactNode})=><div className="page-head"><div><div className="eyebrow">{farm.name}</div><h1>{title}</h1><p>{sub}</p></div>{button}</div>;
+  const PageHead=({title,sub,button}:{title:string;sub:string;button?:React.ReactNode})=><div className="page-head"><div><div className="eyebrow">{farm?.name ?? ""}</div><h1>{title}</h1><p>{sub}</p></div>{button}</div>;
   const Stat=({icon:Icon,label,value,foot}:{icon:any;label:string;value:string;foot:string})=><div className="stat"><div className="stat-top"><span>{label}</span><span className="stat-icon"><Icon size={17}/></span></div><div className="stat-value">{value}</div><div className="stat-foot">{foot}</div></div>;
 
   function renderInventory(category:"pesticide"|"fertilizer"){
