@@ -253,7 +253,7 @@ export default function Home() {
   }
 
   function renderModal(){
-    if(!modal)return null;
+    if(!modal || !farm)return null;
     const title=modal==="item"?t.addItem:modal==="purchase"?t.recordPurchase:modal==="usage"?t.recordUsageTitle:modal==="plot"?t.addPlot:modal==="labour"?t.addLabour:t.addExpense;
     const category=modal==="item"?itemCategory:form.category;
     const filteredItems=items.filter(i=>!form.category||i.category===form.category||!["pesticide","fertilizer"].includes(form.category)).filter(i=>!form.item_id||i.id===form.item_id);
